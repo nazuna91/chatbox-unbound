@@ -1,0 +1,8 @@
+node_modules/
+.git/
+assets/_live*.png
+assets/_pet*.png
+assets/_test*.png
+*.log
+*.tmp-*
+.DS_Store
