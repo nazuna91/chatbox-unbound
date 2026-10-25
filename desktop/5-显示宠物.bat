@@ -1,8 +1,10 @@
 @echo off
 chcp 65001 >nul
-set "NODE=%LOCALAPPDATA%\Programs\DeepSeek Harness\resources\runtime\primary-runtime\dependencies\node\bin\node.exe"
-set "INS=C:\Users\Administrator.DESKTOP-1B8MNPO\Documents\deepseek-harness\default-workspace\chatbox-unbound\install.mjs"
-"%NODE%" "%INS%" --pet
-echo.
-echo Drag the figure with left button, click it for a line, right-click for menu.
+set "INS=%~dp0..\install.mjs"
+set "RUN=node"
+where node >nul 2>nul
+if errorlevel 1 set "RUN=%LOCALAPPDATA%\Programs\DeepSeek Harness\resources\runtime\primary-runtime\dependencies\node\bin\node.exe"
+"%RUN%" "%INS%" --pet 
+echo Drag with left button. Click for q-bounce. Right-click for menu.
+
 pause
